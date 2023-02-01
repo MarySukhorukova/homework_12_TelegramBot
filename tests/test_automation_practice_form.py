@@ -59,3 +59,31 @@ def test_filling_and_submitting_form():
         browser.element('.table').should(have.text('Pytest_logo.svg.png'))
         browser.element('.table').should(have.text('Hogwarts'))
         browser.element('.table').should(have.text('Haryana Karnal'))
+
+
+@allure.tag('web')
+@allure.label('owner', 'marysukhorukova')
+@allure.severity(Severity.CRITICAL)
+@allure.feature('Проверка столбцов таблицы')
+@allure.story('Web Tables')
+def test_check_table():
+    with allure.step("Открываем страницу с таблицей"):
+        browser.open('https://demoqa.com/webtables')
+
+    # THEN
+    with allure.step("Проверяем, что в таблице есть столбец First Name"):
+        browser.element('.rt-resizable-header-content').should(have.text('First Name'))
+
+
+@allure.tag('web')
+@allure.label('owner', 'marysukhorukova')
+@allure.severity(Severity.NORMAL)
+@allure.feature('Проверка имени в таблице')
+@allure.story('Web Tables')
+def test_check_name_in_table():
+    with allure.step("Открываем страницу с таблицей"):
+        browser.open('https://demoqa.com/webtables')
+
+    # THEN
+    with allure.step("Проверяем, что в таблице есть имя Mary"):
+        browser.element('.rt-td').should(have.text('Mary'))

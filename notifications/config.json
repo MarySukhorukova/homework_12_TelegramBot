@@ -1,9 +1,9 @@
 {
   "base": {
     "logo": "",
-    "project": "some project",
-    "environment": "some env",
-    "comment": "some comment",
+    "project": "homework_12_TelegramBot",
+    "environment": "chrome",
+    "comment": "Отчет",
     "reportLink": "",
     "language": "en",
     "allureFolder": "allure-report/",
